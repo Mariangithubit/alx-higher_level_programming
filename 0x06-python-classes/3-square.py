@@ -2,6 +2,7 @@
 """Area of a square module"""
 
 
+
 class Square:
      """ returns the current square area"""
      def __init__(self, size=0):
