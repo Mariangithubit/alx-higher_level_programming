@@ -3,22 +3,20 @@
 
 
 class Square:
-     """ returns the current square area
-
-     Args:
-         size (int): length of side of square
-
-     Attributes:
-         __size (int): length one side of square
-
-     Raises:
-         TypeError: if size is not an integer
-         ValueError: if size is less than 0
-
-    """
+     """ returns the current square area"""
 
      def __init__(self, size=0):
-         """initialize a new square"""
+         """initialize a new square
+        Args:
+            size (int): length of side of square
+    
+        Attributes:
+            __size (int): length one side of square
+
+        Raises:
+            TypeError: if size is not an integer
+            ValueError: if size is less than 0
+        """
          if type(size) is not int:
              raise TypeError('size must be an integer')
          if size < 0:
