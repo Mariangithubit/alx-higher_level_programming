@@ -4,7 +4,6 @@
 
 class Square:
     """ defines a square by: (based on 5-square.py)"""
-
     def __init__(self, size=0, position=(0, 0)):
         """init a new square.
         Args:
@@ -20,6 +19,7 @@ class Square:
 
     @size.setter
     def size(self, value):
+        """setter method"""
         if type(value) is not int:
             raise TypeError('size must be an integer')
         if value < 0:
@@ -33,6 +33,7 @@ class Square:
 
     @position.setter
     def position(self, value):
+        """setter position method"""
         if type(value) is not tuple:
             raise TypeError('position must be a tuple of 2 positive integers')
         if len(value) != 2:
@@ -43,10 +44,12 @@ class Square:
             self.__position = value
 
     def area(self):
+        """return current square area"""
         area = self.__size * self.__size
         return area
 
     def my_print(self):
+        """print the square"""
         if self.__size == 0:
             print()
         else:
@@ -58,4 +61,3 @@ class Square:
                 for col in range(0, self.__size):
                     print("#", end="")
                 print()
-
