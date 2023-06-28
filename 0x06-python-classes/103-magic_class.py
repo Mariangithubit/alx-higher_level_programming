@@ -1,17 +1,18 @@
 #!/usr/bin/python3
-"""ByteCode -> Python #5"""
+"""ByteCode"""
+
 
 import math
 
 
-class MagicClass:
-    """Represent MagicClass that does exactly the same as the following Python bytecode."""
+class MagicClass():
+    """Defines a MagicClass"""
 
     def __init__(self, radius=0):
-        """Initialize a MagicClass.
+        """Sets the necessary attributes for the MagicClas.
 
-        Arg:
-            radius (float or int): The radius of the new MagicClass.
+        Args:
+            radius (int, float): the radius of the circle
         """
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
@@ -19,9 +20,9 @@ class MagicClass:
         self.__radius = radius
 
     def area(self):
-        """Return the area of the MagicClass."""
-        return (self.__radius ** 2 * math.pi)
+        """Returns the current circle area."""
+        return self.__radius ** 2 * math.pi
 
     def circumference(self):
-        """Return The circum of the MagicClass."""
-        return (2 * math.pi * self.__radius)
+        """Returns the circumference of the current circle"""
+        return 2 * math.pi * self.__radius
