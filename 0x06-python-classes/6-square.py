@@ -6,6 +6,7 @@ class Square:
     """ defines a square by: (based on 5-square.py)"""
     def __init__(self, size=0, position=(0, 0)):
         """init a new square.
+
         Args:
         size (int): size of new square.
         """
