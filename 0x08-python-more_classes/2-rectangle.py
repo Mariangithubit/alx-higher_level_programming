@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Area and Perimeter"""
+"""Area and Perimeter"""
 
 
 class Rectangle:
