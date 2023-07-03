@@ -1,14 +1,17 @@
 #!/usr/bin/python3
-"""Eval is magic"""
+"""Change representation"""
 
 
 class Rectangle:
     """Defines a rectangle"""
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """Instantiation"""
-
         self.__width = width
         self.__height = height
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -33,7 +36,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """set height"""
-        self.__height = value
+        self.__height == value
         try:
             assert type(self.__height) == int
         except:
@@ -62,3 +65,8 @@ class Rectangle:
     def __repr__(self):
         """representation of the rectangle"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """delet rectangle"""
+        type(self).number_of_instances -= 1
+        print ("Bye rectangle...")

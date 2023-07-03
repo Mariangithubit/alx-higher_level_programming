@@ -1,14 +1,17 @@
 #!/usr/bin/python3
-"""Eval is magic"""
+"""Compare rectangles"""
 
 
 class Rectangle:
     """Defines a rectangle"""
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """Instantiation"""
-
         self.__width = width
         self.__height = height
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -33,13 +36,25 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """set height"""
-        self.__height = value
+        self.__height == value
         try:
             assert type(self.__height) == int
         except:
             raise TypeError("height must be an integer")
         if self.__height < 0:
             raise ValueError("height must be >= 0")
+
+    @Static method
+    def bigger_or_equal(rect_1, rect_2):
+        """Returns the biggest rectangle based on the area"""
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rect_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        else
+        rect_2
 
     def area(self):
         """Returns the rectangle area"""
@@ -62,3 +77,8 @@ class Rectangle:
     def __repr__(self):
         """representation of the rectangle"""
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """delet rectangle"""
+        type(self).number_of_instances -= 1
+        print ("Bye rectangle...")
