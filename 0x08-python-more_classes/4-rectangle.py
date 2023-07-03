@@ -13,11 +13,11 @@ class Rectangle:
     def width(self):
         """Retrieve it"""
         return self.__width
-    
+
     @property
     def height(self):
-       """Retrieve it"""
-       return self.__height
+        """Retrieve height"""
+        return self.__height
 
     @width.setter
     def width(self, value):
@@ -51,7 +51,8 @@ class Rectangle:
         """ print the rectangle with the character #"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return ("\n".join(["".join(["#" for i in range(self.__width)]) for k in range(self.__height)]))
+        return ("\n".join(["".join(["#" for i in range(self.__width)])
+                for k in range(self.__height)]))
 
     def __repr__(self):
         """representation of the rectangle"""
