@@ -29,6 +29,7 @@ class Rectangle:
     def height(self):
         """Retrieve it"""
         return self.__height
+
     @height.setter
     def height(self, value):
         """set height"""
@@ -54,9 +55,5 @@ class Rectangle:
         """ print the rectangle with the character #"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        for i in range(self.__width):
-            for k in range(self.__height):
-                print("#", end="")
-            if i != self.__width - 1:
-                print()
-        return ""
+        return ("\n".join(["".join(["#" for i in range(self.__width)])
+            for k in range(self.__height)]))
