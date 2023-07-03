@@ -6,8 +6,8 @@ class Rectangle:
     """Defines a rectangle"""
     def __init__(self, width=0, height=0):
         """Instantiation"""
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -32,7 +32,7 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """set height"""
-        self.__height == value
+        self.__height = value
         try:
             assert type(self.__height) == int
         except:
