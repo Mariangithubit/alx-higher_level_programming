@@ -9,8 +9,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Instantiation"""
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
         type(self).number_of_instances += 1
 
     @property
@@ -18,31 +18,28 @@ class Rectangle:
         """Retrieve it"""
         return self.__width
 
-    @width.setter
-    def width(self, value):
-        """set width"""
-        self.__width = value
-        try:
-            assert type(self.__width) == int
-        except:
-            raise TypeError("width must be an integer")
-        if self.__width < 0:
-            raise ValueError("width must be >= 0")
-
-   @property
+    @property
     def height(self):
         """Retrieve it"""
         return self.__height
+
+    @width.setter
+    def width(self, value):
+        """set width"""
+        if type(value) != int:
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+
     @height.setter
     def height(self, value):
         """set height"""
-        self.__height == value
-        try:
-            assert type(self.__height) == int
-        except:
+        if type(value) != int:
             raise TypeError("height must be an integer")
-        if self.__height < 0:
+        if value < 0:
             raise ValueError("height must be >= 0")
+        self.__height = value
 
     def area(self):
         """Returns the rectangle area"""
@@ -58,9 +55,8 @@ class Rectangle:
         """ print the rectangle with the character #"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        for i in range(self.__width):
-            for k in range(self.__height):
-                return ("\n".join(["".join(["#"])]))
+        return ("\n".join(["".join([str(self.print_symbol)
+                for i in range(self.__width)]) for k in range(self.__height)]))
 
     def __repr__(self):
         """representation of the rectangle"""
@@ -69,4 +65,4 @@ class Rectangle:
     def __del__(self):
         """delet rectangle"""
         type(self).number_of_instances -= 1
-        print ("Bye rectangle...")
+        print("Bye rectangle...")
