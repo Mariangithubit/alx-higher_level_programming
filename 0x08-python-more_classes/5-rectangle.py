@@ -51,7 +51,8 @@ class Rectangle:
         """ print the rectangle with the character #"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return ("\n".join(["".join(["#" for i in range(self.__width)]) for k in range(self.__height)]))
+        return ("\n".join(["".join(["#" for i in range(self.__width)])
+                for k in range(self.__height)]))
 
     def __repr__(self):
         """representation of the rectangle"""
@@ -59,4 +60,4 @@ class Rectangle:
 
     def __del__(self):
         """delet rectangle"""
-        print ("Bye rectangle...")
+        print("Bye rectangle...")
