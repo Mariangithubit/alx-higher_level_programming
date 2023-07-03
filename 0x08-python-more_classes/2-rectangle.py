@@ -26,20 +26,20 @@ class Rectangle:
             raise ValueError("width must be >= 0")
 
     @property
-     def height(self):
+    def height(self):
          """To retrieve it"""
          return self.__height
 
-     @height.setter
-     def height(self, value):
+    @height.setter
+    def height(self, value):
          """set height"""
          self.__height == value
          try:
              assert type(self.__height) == int
-        except:
-            raise TypeError("height must be an integer")
-        if self.__height < 0:
-            raise ValueError("height must be >= 0")
+         except:
+             raise TypeError("height must be an integer")
+         if self.__height < 0:
+             raise ValueError("height must be >= 0")
 
     def area(self):
         """Returns the rectangle area"""
