@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""LockedClass
+"""Prevent user from creat new instance
 """
 
 
-LockedClass:
-    __slots__ = ['first_name']
+class LockedClass:
+    __slots__= ['first_name']
