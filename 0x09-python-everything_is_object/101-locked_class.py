@@ -4,4 +4,5 @@
 
 
 class LockedClass:
-    __slots__= ['first_name']
+    """lock class from change"""
+    __slots__ = ["first_name"]
