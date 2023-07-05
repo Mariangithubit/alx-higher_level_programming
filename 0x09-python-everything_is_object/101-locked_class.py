@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
- prevents the user from dynamically
- creating new instance
+"""prevents the user from dynamically creating new instance
 """
 
 
