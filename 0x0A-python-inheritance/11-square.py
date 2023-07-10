@@ -16,37 +16,37 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
 
-        
+
 class Rectangle(BaseGeometry):
     """class Rectangle BaseGeometry"""
-    
     def __init__(self, width, height):
         """Instantiation rectangle"""
-        self.__integer_validator('width', width)
+        BaseGeometry.integer_validator(self, 'width', width)
         self.__width = width
-        self.__integer_validator('height ', height)
+        BaseGeometry.integer_validator(self, 'height', height)
         self.__height = height
 
     def area(self):
         """implement area"""
         return self.__width * self.__height
-    
+
     def __str__(self):
         """return str"""
         return '[Rectangle] {}/{}'.format(self.__width, self.__height)
 
-class SquareRectangle):
+
+class Square(Rectangle):
     """Class square"""
     def __init__(self, size):
         """Instantiation"""
         self.integer_validator('size', size)
-        super().__init__('size', size)
+        super().__init__(size, size)
         self.__size = size
 
-    def arae(self):
+    def area(self):
         """implement area"""
-        return self.__size *self.__size
+        return self.__size * self.__size
 
-    def __init__(self, size):
+    def __str__(self):
         """Instantiation with size"""
         return '[Square] {}/{}'.format(self.__size, self.__size)
