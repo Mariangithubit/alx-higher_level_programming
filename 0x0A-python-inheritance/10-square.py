@@ -20,6 +20,7 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """class Rectangle BaseGeometry"""
+
     def __init__(self, width, height):
         """Instantiation rectangle"""
         BaseGeometry.integer_validator(self, 'width', width)
@@ -41,6 +42,6 @@ class Square(Rectangle):
 
     def __init__(self, size):
         """Instantiation"""
-        self.integer_validator('size', size)
+        self.integer_validator("size", size)
         super().__init__(size, size)
         self.__size = size
