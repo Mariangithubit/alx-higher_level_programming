@@ -35,7 +35,7 @@ class Base:
                 jsonfile.write("[]")
             else:
                 list_dicts = [o.to_dictionary() for o in list_obj]
-                josnfile.write(Base.to_json_string(list_dicts))
+                jsonfile.write(Base.to_json_string(list_dicts))
 
     @staticmethod
     def from_json_string(json_string):
@@ -45,7 +45,7 @@ class Base:
         return json.loads(json_string)
 
     @classmethod
-    def creat(cls, **dictionary):
+    def create(cls, **dictionary):
         """Insantiation from dict"""
 
         if dictionary and dictionary != {}:
@@ -61,9 +61,9 @@ class Base:
         """Insantiation list of classes from a file"""
         filename = str(cls.__name__) + ".json"
         try:
-            with open(filename, "r") as jsonfiel:
+            with open(filename, "r") as jsonfile:
                 list_dicts = Base.from_json_string(jsonfile.read())
-                return [cls.creat(**d) for d in list_dicts]
+                return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
 
