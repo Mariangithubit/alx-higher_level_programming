@@ -3,6 +3,6 @@
 -- Results must be sorted in ascending order.
 SELECT s.`title`, g.`genre_id`
 	FROM `tv_shows` AS s
-	LEFT JOIN `tv_show_genres` AS g
-	ON s.`id` = g.`show_id`
+		LEFT JOIN `tv_show_genres` AS g
+		ON s.`id` = g.`show_id`
 	ORDER BY s.`title`, g.`genera_id`;
