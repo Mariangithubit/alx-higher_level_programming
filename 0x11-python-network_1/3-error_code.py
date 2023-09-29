@@ -10,5 +10,5 @@ from urllib import request, error
 try:
     with request.urlopen(sys.argv[1]) as sour:
         print(sour.read().decode("utf-8"))
-except error.HTTPError:
-    print('Error code:', error.HTTPError.code)
+except error.HTTPError as err:
+    print('Error code:', err.code)
