@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""A  script that:
-- sends a POST request to the passed URL with the email as a parameter
+"""A script that:
+- sends a request to the URL
+- displays the value of the variable X-Request-Id in the response header
 """
 import sys
 import requests
@@ -8,7 +9,6 @@ import requests
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    value = {"email": sys.argv[2]}
 
-    r = requests.post(url, data=value)
-    print(r.text)
+    r = requests.get(url)
+    print(r.headers.get("X-Request-Id"))
